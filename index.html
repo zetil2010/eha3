@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slots for Online Casinos | Herman Egorov - Premium Gaming Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 30, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #FFD700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #FFD700, #FF6B35);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0F0F1E 0%, #1A1A3E 50%, #2A2A5E 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23FFD700" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; }
+            to { text-shadow: 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #B8B8D4;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #9A9ABA;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1.5s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700, #FF6B35);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #FFD700;
+            border: 2px solid #FFD700;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-icon {
+            position: absolute;
+            color: #FFD700;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: floatRandom 15s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+        .floating-icon:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
+        .floating-icon:nth-child(4) { top: 80%; left: 60%; animation-delay: 6s; }
+        .floating-icon:nth-child(5) { top: 10%; left: 70%; animation-delay: 8s; }
+
+        @keyframes floatRandom {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1A1A3E;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-text h3 {
+            font-family: 'Orbitron', monospace;
+            color: #1A1A3E;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, #1A1A3E, #2A2A5E);
+            border-radius: 20px;
+            padding: 2rem;
+            color: #fff;
+            box-shadow: 0 20px 40px rgba(26, 26, 62, 0.3);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FF6B35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3rem;
+            color: #fff;
+        }
+
+        .profile-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .profile-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .profile-contact a {
+            color: #B8B8D4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .profile-contact a:hover {
+            color: #FFD700;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FFD700, #FF6B35);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FF6B35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .service-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            color: #1A1A3E;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.3rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        /* Target Audience Section */
+        .audience {
+            padding: 100px 0;
+            background: #1A1A3E;
+            color: #fff;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .audience-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .audience-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #FFD700;
+            transform: translateY(-5px);
+        }
+
+        .audience-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .audience-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #FFD700;
+        }
+
+        .audience-description {
+            color: #B8B8D4;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .audience-benefits {
+            list-style: none;
+        }
+
+        .audience-benefits li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            color: #9A9ABA;
+        }
+
+        .audience-benefits li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #FFD700, #FF6B35);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #1A1A3E;
+            font-weight: 600;
+        }
+
+        .btn-white:hover {
+            background: #f8f9fa;
+            color: #1A1A3E;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #f8f9fa;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FF6B35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h4 {
+            color: #1A1A3E;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: #666;
+        }
+
+        .contact-details a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1A1A3E;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0F0F1E;
+            color: #fff;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: #B8B8D4;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #FFD700;
+            color: #0F0F1E;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            padding-top: 2rem;
+            color: #9A9ABA;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0F0F1E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            border-top: 4px solid #FFD700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-coins"></i>
+                SlotsForCasinos
+            </a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#audience">Solutions</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-elements">
+            <div class="floating-icon"><i class="fas fa-dice"></i></div>
+            <div class="floating-icon"><i class="fas fa-gem"></i></div>
+            <div class="floating-icon"><i class="fas fa-crown"></i></div>
+            <div class="floating-icon"><i class="fas fa-star"></i></div>
+            <div class="floating-icon"><i class="fas fa-coins"></i></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Slots for Online Casinos</h1>
+            <p class="hero-subtitle">Premium Gaming Solutions by Herman Egorov</p>
+            <p class="hero-description">
+                Leading software development team specializing in cutting-edge slot machines and casino games. 
+                Expanding into Latin American markets with innovative B2B solutions for the iGaming industry.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    Let's Collaborate
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i>
+                    View Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Meet Our Director</h2>
+                <p class="section-subtitle">
+                    Leading innovation in the iGaming industry with expertise and vision
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h3>Herman Egorov</h3>
+                    <p>
+                        As the director of our specialized software development team, Herman Egorov brings years of expertise 
+                        in creating innovative slot machines and casino gaming solutions. Our team is dedicated to delivering 
+                        world-class gaming experiences that drive engagement and revenue for our partners.
+                    </p>
+                    <p>
+                        We are actively developing fresh, engaging slot games and planning strategic expansion into the 
+                        Latin American market. Our focus on cutting-edge technology and player engagement sets us apart 
+                        in the competitive iGaming landscape.
+                    </p>
+                    <p>
+                        <strong>Ready to revolutionize your gaming platform?</strong> We invite business contacts in the 
+                        iGaming industry to explore collaboration opportunities. If you're interested in our fresh slots, 
+                        we're happy to send you detailed cases showcasing our capabilities.
+                    </p>
+                </div>
+                
+                <div class="about-image animate-on-scroll">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="profile-name">Herman Egorov</h3>
+                        <p class="profile-title">Director & Lead Developer</p>
+                        <div class="profile-contact">
+                            <a href="https://www.linkedin.com/in/herman-egorov-349314374/" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn Profile
+                            </a>
+                            <a href="mailto:Eha.gaming.org@mail.ru">
+                                <i class="fas fa-envelope"></i> Eha.gaming.org@mail.ru
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Our Gaming Solutions</h2>
+                <p class="section-subtitle">
+                    Comprehensive slot machine development and casino gaming solutions
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="service-title">Custom Slot Development</h3>
+                    <p class="service-description">
+                        Bespoke slot machine games designed to captivate players and maximize engagement.
+                    </p>
+                    <ul class="service-features">
+                        <li>Unique themes and storylines</li>
+                        <li>Advanced bonus features</li>
+                        <li>Mobile-responsive design</li>
+                        <li>High-quality graphics and animations</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Request Cases</a>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">B2B Gaming Platform</h3>
+                    <p class="service-description">
+                        Complete gaming platform solutions for online casinos and gaming operators.
+                    </p>
+                    <ul class="service-features">
+                        <li>Scalable architecture</li>
+                        <li>Multi-language support</li>
+                        <li>Payment integration</li>
+                        <li>Analytics and reporting</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Learn More</a>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Marketing Solutions</h3>
+                    <p class="service-description">
+                        Gaming technologies designed for effective marketing campaigns and customer engagement.
+                    </p>
+                    <ul class="service-features">
+                        <li>Player retention tools</li>
+                        <li>Gamification features</li>
+                        <li>Tournament systems</li>
+                        <li>Promotional mechanics</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section id="audience" class="audience">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Who We Serve</h2>
+                <p class="section-subtitle">
+                    Tailored solutions for different segments of the iGaming industry
+                </p>
+            </div>
+            
+            <div class="audience-grid">
+                <div class="audience-card animate-on-scroll">
+                    <div class="audience-number">01</div>
+                    <h3 class="audience-title">Game Developers & Publishers</h3>
+                    <p class="audience-description">
+                        Partner with us to enhance your gaming portfolio with premium slot games that stand out in the market.
+                    </p>
+                    <ul class="audience-benefits">
+                        <li>White-label slot solutions</li>
+                        <li>Co-development opportunities</li>
+                        <li>Technical support and maintenance</li>
+                        <li>Revenue sharing models</li>
+                    </ul>
+                </div>
+                
+                <div class="audience-card animate-on-scroll">
+                    <div class="audience-number">02</div>
+                    <h3 class="audience-title">iGaming Organizations</h3>
+                    <p class="audience-description">
+                        Organizations selling in the iGaming sector can leverage our innovative gaming solutions to expand their offerings.
+                    </p>
+                    <ul class="audience-benefits">
+                        <li>Market-ready gaming products</li>
+                        <li>Competitive licensing terms</li>
+                        <li>Integration support</li>
+                        <li>Marketing materials included</li>
+                    </ul>
+                </div>
+                
+                <div class="audience-card animate-on-scroll">
+                    <div class="audience-number">03</div>
+                    <h3 class="audience-title">Corporate B2B Clients</h3>
+                    <p class="audience-description">
+                        Enterprise-level gaming solutions designed for corporate clients seeking robust B2B gaming platforms.
+                    </p>
+                    <ul class="audience-benefits">
+                        <li>Scalable infrastructure</li>
+                        <li>Custom development</li>
+                        <li>Compliance and security</li>
+                        <li>24/7 technical support</li>
+                    </ul>
+                </div>
+                
+                <div class="audience-card animate-on-scroll">
+                    <div class="audience-number">04</div>
+                    <h3 class="audience-title">Online Casinos</h3>
+                    <p class="audience-description">
+                        Online casinos looking to implement new gaming technologies for enhanced marketing campaigns and player engagement.
+                    </p>
+                    <ul class="audience-benefits">
+                        <li>Player engagement tools</li>
+                        <li>Retention mechanisms</li>
+                        <li>Analytics and insights</li>
+                        <li>Promotional game features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2 class="cta-title">Ready to Grow Together?</h2>
+                <p class="cta-description">
+                    Join us in revolutionizing the iGaming industry. We're eager to explore opportunities for cooperation 
+                    and build lasting partnerships that drive mutual success in the evolving gaming landscape.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-white">
+                        <i class="fas fa-handshake"></i>
+                        Start Collaboration
+                    </a>
+                    <a href="mailto:Eha.gaming.org@mail.ru" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">
+                    Ready to discuss your gaming project? We're here to help you succeed.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info animate-on-scroll">
+                    <h3 style="color: #1A1A3E; margin-bottom: 2rem; font-family: 'Orbitron', monospace;">Get in Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:Eha.gaming.org@mail.ru">Eha.gaming.org@mail.ru</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/herman-egorov-349314374/" target="_blank">Herman Egorov</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Market Focus</h4>
+                            <p>Latin America & Global iGaming</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Response Time</h4>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate-on-scroll">
+                    <h3 style="color: #1A1A3E; margin-bottom: 2rem; font-family: 'Orbitron', monospace;">Send Us a Message</h3>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">Area of Interest</label>
+                            <select id="interest" name="interest">
+                                <option value="">Select an option</option>
+                                <option value="slot-development">Custom Slot Development</option>
+                                <option value="b2b-platform">B2B Gaming Platform</option>
+                                <option value="marketing-solutions">Marketing Solutions</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project or how we can help..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Slots for Online Casinos</div>
+                <p class="footer-description">
+                    Thank you for your interest in our gaming solutions. We look forward to the opportunity 
+                    to collaborate and grow together in the exciting world of iGaming. Let's create the future 
+                    of online gaming together!
+                </p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/herman-egorov-349314374/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:Eha.gaming.org@mail.ru" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Slots for Online Casinos by Herman Egorov. All rights reserved. | Premium iGaming Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header Background on Scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 30, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 15, 30, 0.95)';
+            }
+        });
+
+        // Animate on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for your message! We will get back to you within 24 hours.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Interactive Elements
+        document.querySelectorAll('.service-card, .audience-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add some particle effects
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: #FFD700;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: floatUp 3s linear forwards;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 3000);
+        }
+
+        // Add particle CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+
+        // Dynamic typing effect for hero subtitle
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after page load
+        setTimeout(() => {
+            const subtitle = document.querySelector('.hero-subtitle');
+            const originalText = subtitle.textContent;
+            typeWriter(subtitle, originalText, 100);
+        }, 2000);
+    </script>
+</body>
+</html>
